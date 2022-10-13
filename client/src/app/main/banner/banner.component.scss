@@ -1,0 +1,50 @@
+.banner {
+    display: flex;
+
+    height: 360px;
+    flex-direction: column;
+
+    .up {
+        background-color: orangered;
+        flex: 2;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+
+        .url {
+            font-size: 4rem;
+            color: white;
+        }
+    }
+
+    .down {
+        flex: 1;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        .info {
+            width: 854px;
+            .name {
+                font-size: 2rem;
+                font-weight: 600;
+                padding: 10px;
+            }
+            .description {
+                font-size: 1.2rem;
+                padding: 10px;
+                color: gray;
+            }
+        }
+    }
+    .join {
+        margin: 5px 0px 0px 20px;
+        border : 1px solid orangered;
+        width: 96px;
+        height: 32px;
+        border-radius: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: orangered;
+    }
+}

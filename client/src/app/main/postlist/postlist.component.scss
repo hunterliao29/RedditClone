@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    box-sizing: border-box;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    background-color: white;
+    margin: 10px;
+    flex-direction: row;
+
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    background-color: gainsboro;
+    // move to the top
+    align-items: center;
+    justify-content: flex-start;
+
+    padding-top: 5px;
+
+}
+.right {
+        flex: 1;
+}
+.by{
+    padding-left: 3px;
+    font-size: 15px;
+    color: gray;
+}
+h3{
+    margin: 5px;
+    
+}
+
+p{
+    padding-left: 15px;
+}
+.comments {
+    padding-left: 3px;
+    font-size: 15px;
+    color: gray;
+}

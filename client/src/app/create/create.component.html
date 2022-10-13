@@ -1,0 +1,23 @@
+<div class="space"></div>
+<div class="box">
+    <p class="title">Create a community</p>
+    <p>Community names including capitalization cannot be changed.</p>
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+
+            <input type="text" formControlName="url" id="url" class="form-control" [placeholder]="url">
+        </div>
+        <div class="form-group">
+
+            <input type="text" formControlName="name" id="name" class="form-control" placeholder="name">
+        </div>
+        <div class="form-group">
+
+            <input type="text" formControlName="description" id="description" class="form-control"
+                placeholder="description">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="false">Create</button>
+        <p *ngIf="message">{{message}}</p>
+    </form>
+
+</div>

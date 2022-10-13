@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="left">
+        <div (click)="upvote(post._id)">↑</div>
+        <div>{{post.votes.up - post.votes.down}}</div>
+        <div (click)="downvote(post._id)">↓</div>
+    </div>
+    <div class="right">
+        <div (click)="goSub()">r/{{sub}}</div>
+        <div class="by">Post by u/{{post.by}} {{time}} ago</div>
+        <h3>{{post.title}}</h3>
+        <p>{{post.message}}</p>
+        <div class="comments" (click)="showComments()">Comments</div>
+
+        <div *ngIf="show && authService.isLogIn">
+            <div><input type="text" [(ngModel)]="message"><button (click)="send(post._id, message)">sent</button></div>
+            <app-postlist *ngFor="let next of nexts" [post]="next"></app-postlist>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+
+.body {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(209, 214, 220);
+    
+    div {
+        margin: 10px;
+
+    }
+    .center {
+        width: 640px;
+        .post {
+            height: 58px;
+        }
+    }
+    .center > div{
+        box-sizing: border-box;
+        border: 1px solid rgb(204, 204, 204);
+        border-radius: 4px;
+        padding: 10px;
+        background-color: white;
+    }
+    .float {
+        
+        width: 310px;
+        
+    }
+    .float > div {
+        background-color: white;
+        border-radius: 4px;
+        border: 1px solid rgb(204, 204, 204);
+    }
+    .welcome {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .info {
+        color: gray;
+    }
+    .btn {
+        border: 1px solid rgb(204, 204, 204);
+        text-align: center;
+        border-radius: 10px;
+    }
+}

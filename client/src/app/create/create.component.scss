@@ -1,0 +1,52 @@
+:host {
+    display: flex;
+
+    background-color: rgb(197, 227, 250);
+    .title {
+        font-weight: 600;
+    }
+    .box {
+        width: 94vw;
+        height: calc(100vh - 100px);
+        background-color: white;
+        padding: 24px;
+
+        form{
+            input , button{
+                display: block;
+                margin: 10px 0px;
+                box-sizing: border-box;
+                border-radius: 8px;
+                padding: 10px;
+                border: 1px solid rgb(212,214,221);
+                width: 280px;
+                height: 50px;
+                
+            }
+            button {
+                background-color: rgb(6, 117, 203);;
+                color: white;
+                font-weight: 600;
+                font-size: 16px;
+            }
+            p {
+                color: red;
+            }
+      
+        }
+    }
+    .space {
+        width: 6vw;
+        
+    }
+}
+.signup {
+    padding-top: 20px;
+    font-size: 12px;
+    a {
+        text-decoration: none;
+        color: rgb(6, 117, 203);
+        font-weight: 600;
+    }
+}
+

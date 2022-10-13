@@ -1,0 +1,15 @@
+<header>
+    <nav>
+        <a routerLink=""><img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Reddit_logo_new.svg"
+                alt="logo"></a>
+
+        <div *ngIf="!authService.isLogIn" class="auth">
+            <div class="signup" routerLink="signup">Sign Up</div>
+            <div class="login" routerLink="login">Log In</div>
+        </div>
+        <div *ngIf="authService.isLogIn">
+            <div class="logout" (click)="authService.logout()" >Log Out</div>
+        </div>
+
+    </nav>
+</header>

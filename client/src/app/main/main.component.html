@@ -1,0 +1,32 @@
+<app-banner *ngIf="sub" [sub]="sub"></app-banner>
+<div class="body">
+    <div class="center">
+        <app-input *ngIf="authService.isLogIn" [sub]="sub"></app-input>
+        <app-filter></app-filter>
+        <app-postlist *ngFor="let post of posts" [post]="post"></app-postlist>
+    </div>
+
+    <div class="float" *ngIf="authService.isLogIn">
+        <div *ngIf="sub">
+            <div class="welcome">
+                Welcome to {{sub.name}}
+            </div>
+            <div>The home of {{sub.url}}</div>
+            <div class="info">{{sub.description}}</div>
+            <div routerLink="/post" class="btn">
+                create a post
+            </div>
+        </div>
+        <div *ngIf="!sub">
+            <div class="welcome">
+                Welcome Home
+            </div>
+            <div routerLink="/create" class="btn">
+                create a community
+            </div>
+            <div routerLink="/post" class="btn">
+                create a post
+            </div>
+        </div>
+    </div>
+</div>
