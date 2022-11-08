@@ -15,13 +15,13 @@ export class SubService {
     return this.http.post(`http://localhost:3000/sub`, { url, sub, description });
   }
   isJoined(sub: string) {
-    return this.http.get(`http://localhost:3000/sub/${sub}/joined`);
+    return this.http.get(`http://localhost:3000/sub/joined/${sub}`);
   }
   joinSub(sub: string) {
-    return this.http.post(`http://localhost:3000/sub/${sub}/join`, {});
+    return this.http.post(`http://localhost:3000/sub/join/${sub}`, {});
   }
   leaveSub(sub: string) {
-    return this.http.post(`http://localhost:3000/sub/${sub}/leave`, {});
+    return this.http.post(`http://localhost:3000/sub/leave/${sub}`, {});
   }
   getSubs() {
     return this.http.get(`http://localhost:3000/sub`);

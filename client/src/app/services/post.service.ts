@@ -19,7 +19,7 @@ export class PostService {
   }
 
   getPosts(sub: string) {
-    return this.http.get(`http://localhost:3000/post/${sub}/${this.filterSubject.getValue()}`);
+    return this.http.get(`http://localhost:3000/post/${sub}`);
   }
   getHomePosts() {
     return this.http.get(`http://localhost:3000/post/home`);
@@ -28,17 +28,17 @@ export class PostService {
     return this.http.post(`http://localhost:3000/post`, { sub, title, message });
   }
   childPosts(id: string) {
-    return this.http.get(`http://localhost:3000/post/${id}/child`);
+    return this.http.get(`http://localhost:3000/post/child/${id}`);
   }
 
   postMessage(id: string, message: string) {
-    return this.http.post(`http://localhost:3000/post/${id}/child`, { message });
+    return this.http.post(`http://localhost:3000/post/child/${id}`, { message });
   }
   upvoteMessage(id: string) {
-    return this.http.put(`http://localhost:3000/post/${id}/upvote`, {});
+    return this.http.put(`http://localhost:3000/post/upvote/${id}`, {});
   }
   downvoteMessage(id: string) {
-    return this.http.put(`http://localhost:3000/post/${id}/downvote`, {});
+    return this.http.put(`http://localhost:3000/post/downvote/${id}`, {});
   }
 
   changeFilter(method: string) {

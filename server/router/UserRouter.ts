@@ -3,12 +3,15 @@ import User from "../model/User";
 import { compare, genSalt, hash } from "bcrypt";
 import validator from "validator";
 import { sign, verify, JwtPayload } from "jsonwebtoken";
-import { config } from "dotenv";
+import {config} from 'dotenv'
 
-config();
+
+config()
 const router = Router();
 
-if (!process.env.JWT_KEY) throw new Error("SALT not defined in .env file");
+console.log(process.env.JWT_KEY);
+
+if (!process.env.JWT_KEY) throw new Error("JWT_KEY not defined in .env file");
 if (!process.env.SALT) throw new Error("SALT not defined in .env file");
 const SALT = parseInt(process.env.SALT);
 const JWT_KEY = process.env.JWT_KEY;

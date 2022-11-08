@@ -13,7 +13,7 @@ const PostSchema = new Schema({
     },
     type: {
         type: String,
-        default: "post",    
+        default: "post",
         enum: ["post", "comment"]
     },
     sub: {

@@ -9,7 +9,7 @@ const router = Router();
 
 
 
-router.get("/:sub/joined", async (req, res) => {
+router.get("/joined/:sub", async (req, res) => {
     if (!res.locals.user) {
         res.send({
             joined: "Join"
@@ -40,7 +40,7 @@ router.get("/:sub/joined", async (req, res) => {
 
 })
 
-router.post("/:sub/join", async (req, res) => {
+router.post("/join/:sub", async (req, res) => {
     const { sub } = req.params;
     const subDoc = await Sub.findOne({ url: sub });
     if (!subDoc) {
@@ -57,7 +57,7 @@ router.post("/:sub/join", async (req, res) => {
     })
 
 })
-router.post("/:sub/leave", async (req, res) => {
+router.post("/leave/:sub", async (req, res) => {
     const { sub } = req.params;
     const subDoc = await Sub.findOne({ url: sub });
     if (!subDoc) {

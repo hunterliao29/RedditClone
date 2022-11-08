@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
         res.send({ message: error.message });
     }
 })
-router.get("/:id/child", async (req, res) => {
+router.get("/child/:id", async (req, res) => {
     
     const { id } = req.params;
     const post = await Post.findById(id);
@@ -53,8 +53,8 @@ router.get("/:id/child", async (req, res) => {
     }
 })
 
-router.get("/:sub/:filter", async (req, res) => {
-    const { sub, filter } = req.params;
+router.get("/:sub", async (req, res) => {
+    const { sub } = req.params;
 
     const subDoc = await Sub.findOne({ url: sub });
 
@@ -76,7 +76,7 @@ router.get("/:sub/:filter", async (req, res) => {
 
 
 
-router.post("/:id/child", async (req, res) => {
+router.post("/child/:id", async (req, res) => {
     const { id } = req.params;
     const post = await Post.findById(id);
     if (post) {
@@ -100,7 +100,7 @@ router.post("/:id/child", async (req, res) => {
         })
     }
 })
-router.put("/:id/upvote", async (req, res) => {
+router.put("/upvote/:id", async (req, res) => {
     const { id } = req.params;
     const user = res.locals.user;
     const post = await Post.findById(id);
@@ -121,7 +121,7 @@ router.put("/:id/upvote", async (req, res) => {
             if (postHistory[0].vote == -1) {
                 postHistory[0].vote = 0;
                 const newVote = post.votes as { up: number, down: number }
-                newVote.up++;
+                newVote.down--;
                 post.votes = newVote
                 await post.save()
                 await user.save()
@@ -142,7 +142,7 @@ router.put("/:id/upvote", async (req, res) => {
         return res.status(500).send({ message: "oops" })
     }
 })
-router.put("/:id/downvote", async (req, res) => {
+router.put("/downvote/:id", async (req, res) => {
     const { id } = req.params;
     const user = res.locals.user;
     const post = await Post.findById(id);
@@ -165,7 +165,7 @@ router.put("/:id/downvote", async (req, res) => {
             if (postHistory[0].vote == 1) {
                 postHistory[0].vote = 0;
                 const newVote = post.votes as { up: number, down: number }
-                newVote.down++;
+                newVote.up--;
                 post.votes = newVote
                 await post.save()
                 await user.save()
