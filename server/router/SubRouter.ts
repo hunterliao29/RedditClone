@@ -81,7 +81,23 @@ router.get("/:sub", async (req, res) => {
 
     const sub = await Sub.findOne({ url: req.params.sub })
 
+    console.log(sub);
     if (!sub) {
+        
+        res.send({ sub: undefined })
+
+    } else {
+
+        res.send({ sub: sub })
+    }
+})
+router.get("/name/:id", async (req, res) => {
+
+    const sub = await Sub.findById(req.params.id)
+
+    console.log(sub);
+    if (!sub) {
+        
         res.send({ sub: undefined })
 
     } else {

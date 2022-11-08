@@ -46,25 +46,20 @@ export class PostlistComponent implements OnInit {
 
     setTimeout(() => {
       if (this.post) {
-
+        console.log(this.post);
+        
         this.authService.getName(this.post.by).subscribe((data: any) => {
           this.post.by = data.name;
           this.time = this.timeSince(new Date(this.post.time));
         })
 
-        this.subService.getSub(this.sub).subscribe((data: any) => {
-          this.sub = data.subs[0].url
-
-          
-          
+        this.subService.getSubName(this.post.sub).subscribe((data: any) => {
+     
+          this.sub = data.sub.url
         })
 
 
         this.postService.childPosts(this.post._id).subscribe((data: any) => {
-          console.log("here1");
-          console.log(data.posts);
-          
-          
           this.nexts = data.posts;
         })
       }

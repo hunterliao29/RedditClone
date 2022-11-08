@@ -11,6 +11,9 @@ export class SubService {
   getSub(sub: string) {
     return this.http.get(`http://localhost:3000/sub/${sub}`);
   }
+  getSubName(id: string) {
+    return this.http.get(`http://localhost:3000/sub/name/${id}`);
+  }
   createSub(url: string, sub: string, description: string) {
     return this.http.post(`http://localhost:3000/sub`, { url, sub, description });
   }
